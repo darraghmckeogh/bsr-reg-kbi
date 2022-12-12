@@ -1,0 +1,34 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% block pageTitle %}
+  Unbranded page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+<div class="govuk-!-padding-bottom-5"></div>
+
+  <h1 class="govuk-heading-xl">
+    We have recieved your registration application for 10 Bressenden Place.
+  </h1>
+  <div class="govuk-panel__body">
+    Your reference number is <strong>HDJ2123F</strong>
+  </div>
+  <div class="govuk-!-padding-bottom-5"></div>
+  <p class="govuk-body-l">
+    Your building registration has not yet been confirmed. You will receive another email confirming if we have accepted your registration once our teams have had time to review it.
+  </p>
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {{ govukButton({
+    text: "Return to service",
+    href: "/confirm",
+    classes: "govuk-button--secondary"
+  }) }}
+
+{% endblock %}

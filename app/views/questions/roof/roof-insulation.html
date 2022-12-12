@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Roof</span>
+
+      <form class="form" action="/questions/roof/roof-material" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+          name: "where-do-you-live",
+          fieldset: {
+            legend: {
+              text: "Does the roof have a separate layer of insulation?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "england",
+              text: "Yes, the roof has a separate layer of insulation"
+            },
+            {
+              value: "scotland",
+              text: "No, the roof doesn't have a separate layer of insulation"
+            }
+          ]
+        }) }}
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

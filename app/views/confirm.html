@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Key building information submitted for 10 Bressenden Place.</h1>
+        <div class="govuk-panel__body">
+          Your reference number<br><strong>HDJ2123F</strong>
+        </div>
+      </div>
+
+      <p>
+        We have sent a confirmation email to <b>joe.bloggs@account.co.uk</b>. If you cannot find the email, check your junk or spam folders.
+      </p>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Launch emails",
+        href: "/confirm-email",
+        classes: "govuk-button--secondary"
+      }) }}
+
+      <p>If you did not get the email, <a href="#">contact us</a>.</p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>We've sent your application to the Building Safety Regulator.</p>
+      <p>They will contact you either to confirm your registration, or to ask for more information.</p>
+      <p><a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a> (takes 30 seconds)</p>
+
+      <h2 class="govuk-heading-l">Register another building</h2>
+
+      <p>If you're responsible for registering another building but haven't done so yet, you can <a href="#">register another building here</a>.</p>
+   
+      <h2 class="govuk-heading-l">Register key building information or another building</h2>
+
+      <p>If you've registered a building but need to submit more information about it <a href="/start">register key building information for another building here</a>.</p>
+
+    </div>
+  </div>
+
+{% endblock %}

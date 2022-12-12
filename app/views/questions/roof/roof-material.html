@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Roof</span>
+
+      <form class="form" action="/questions/walls/external-wall-type" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+          name: "where-do-you-live",
+          fieldset: {
+            legend: {
+              text: "What material is mainly used on the roof?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "england",
+              text: "Green roof"
+            },
+            {
+              value: "scotland",
+              text: "Sheet materials",
+              hint: {
+                text: "Includes polycarbonate, metal (like aluminium, zinc, steel, lead), fibre cement asbestos, plastic (like PVC, UPVC, fibre-reinforced plastic) or composite panels"
+              }
+            },
+            {
+              value: "wales",
+              text: "Rolled or liquid materials",
+              hint: {
+                text: "Includes bitumen felt, other felt, hot or cold roof systems, or rubber"
+              }
+            },
+            {
+              value: "northern-ireland",
+              text: "Other panels",
+              hint: {
+                text: "Includes tiles, slate or shingles"
+              }
+            }
+          ]
+        }) }}
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

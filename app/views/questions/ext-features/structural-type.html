@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Structural type and materials</span>
+
+      <form class="form" action="/questions/ext-features/structural-type-modular" method="post">
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {{ govukCheckboxes({
+          name: "countries",
+          fieldset: {
+            legend: {
+              text: "What type of structure is the building?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            text: "Select all that apply"
+          },
+          items: [
+            {
+              value: "france",
+              text: "Concrete frame",
+              hint: {
+                text: "Includes concrete large panel system from the 1960s or after 1970, or any other concrete frame"
+              }
+            },
+            {
+              value: "portugal",
+              text: "Load-bearing masonry"
+            },
+            {
+              value: "spain",
+              text: "Mass timber construction"
+            },
+            {
+              value: "spain",
+              text: "Other timber frame"
+            },
+            {
+              value: "spain",
+              text: "Modular"
+            },
+            {
+              value: "spain",
+              text: "Steel frame"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "none",
+              text: "None of these",
+              behaviour: "exclusive"
+            }
+          ]
+        }) }}
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

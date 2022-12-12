@@ -1,0 +1,87 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/questions/mat-changes/material-changes-year" method="post">
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {{ govukCheckboxes({
+          name: "secondary-uses",
+          fieldset: {
+            legend: {
+              text: "Since the original build, has this building undergone any material change as defined by building regulations?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Select all that apply for known refurbishments."
+          },
+          items: [
+            {
+              value: "assembly-and-recreation",
+              text: "Asbestos removal"
+            }, 
+            {
+              value: "office",
+              text: "Changes in nunmber of storeys"
+            },
+            {
+              value: "residential-dwelling",
+              text: "Changes in number of residential flats"
+            },
+            {
+              value: "residential-institution",
+              text: "Changes in number and/or location of staircase cores"
+            },
+            {
+              value: "residential-other",
+              text: "Changes to windows"
+            },
+            {
+              value: "shop-and-commercial",
+              text: "Complete building or floor rewiring"
+            },
+            {
+              value: "storage-and-other-non-residential",
+              text: "Installation, replacement or removal of emergency or other lighting"
+            },
+            {
+              value: "storage-and-other-non-residential",
+              text: "Installation, replacement or removal of cold water systems in multiple residential units"
+            },
+            {
+              value: "storage-and-other-non-residential",
+              text: "Installation, replacement or removal of gas supply to building"
+            },
+            {
+              value: "storage-and-other-non-residential",
+              text: "Work connected to external wall system"
+            },
+            {
+              value: "storage-and-other-non-residential",
+              text: "None of the above"
+            }
+          ]
+        }) }}
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

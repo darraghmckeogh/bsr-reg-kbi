@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Fire and smoke controls</span>
+
+      <form class="form" action="/questions/fire/fire-provisions-dwellings" method="post">
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+          name: "where-do-you-live",
+          fieldset: {
+            legend: {
+              text: "What strategy do you use to evacuate the residential part of the building?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "wales",
+              text: "Defend in place (stay put)"
+            },
+            {
+              value: "england",
+              text: "Phased"
+            },
+            {
+              value: "wales",
+              text: "Progressive horizontal"
+            },
+            {
+              value: "scotland",
+              text: "Simultaneous"
+            },
+            {
+              value: "northern-ireland",
+              text: "Temporary simultaneous"
+            }
+          ]
+        }) }}
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
