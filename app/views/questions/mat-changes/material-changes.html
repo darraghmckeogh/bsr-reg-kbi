@@ -13,6 +13,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+<span class="govuk-caption-xl">Changes since completion</span>
+
       <form class="form" action="/questions/mat-changes/material-changes-year" method="post">
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
@@ -22,7 +24,7 @@
             legend: {
               text: "Since the original build, has this building undergone any material change as defined by building regulations?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
+              classes: "govuk-fieldset__legend--xl"
             }
           },
           hint: {

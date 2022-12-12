@@ -19,7 +19,7 @@
         <a class="govuk-breadcrumbs__link" href="#">Building Safety Regulator</a>
       </li>
       <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link">Key building information</a>
+        <a class="govuk-breadcrumbs__link">Supply key building information</a>
       </li>
     </ol>
   </div>
@@ -28,12 +28,48 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
+      
       <h1 class="govuk-heading-xl">
-        {% if serviceName %} {{ serviceName }} {% endif %}
+        {% if serviceName %} {{ serviceName }} {% endif %} for 
+        <br>Acme House
       </h1>
 
-      <p>Use this service to provide the Building Safety Regulator with information on the structure and fire safety of your building.</p>
+      <p>Use this service to provide the Building Safety Regulator with information on the structure and fire safety of:</p>
+
+<!--    
+        <p>
+        <strong>Acme House</strong>
+        <br>Acme Road, London, SW32 9KL
+        <br>UPRN: i436flj3f46kfu6gk5j6427
+        </p>
+
+-->
+
+
+      {% from "govuk/components/table/macro.njk" import govukTable %}
+      {{ govukTable({
+        caption: "Acme House",
+        captionClasses: "govuk-table__caption--m",
+        firstCellIsHeader: true,
+        rows: [
+          [
+            {
+              text: "Best known address"
+            },
+            {
+              text: "Acme Road, London, SW32 9KL"
+            }
+          ],
+          [
+            {
+              text: "UK UPRN"
+            },
+            {
+              text: "i436flj3f46kfu6gk5j6427"
+            }
+          ]
+        ]
+      }) }}
 
       <p>Registering takes around 20 minutes.</p>
 
@@ -44,15 +80,16 @@
         </svg>
       </a>
 
+      <h2 class="govuk-heading-m">If you're trying to supply key building information for a different building</h2>
+
+      <p>If you've already registered the building, <a href="#">supply key building information for a different building</a>.</p>
+
+      <p>If you've not yet <a href="#">registered the building</a>, you need to do that first and then come back here.</p>
+
       <h2 class="govuk-heading-m">Before you start</h2>
 
-      <p>If you've not yet <a href="#">registered the building</a> you need to do that first and then come back here.</p>
-
       <p>You can also <a href="#">register by post</a>.</p>
-
-<!--      <p>The online service is also <a href="#">available in Welsh (ar gael yn Gymraeg)</a>.</p>
--->
-
+      
     </div>
 
     <div class="govuk-grid-column-one-third">
