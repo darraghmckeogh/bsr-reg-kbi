@@ -13,9 +13,15 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <span class="govuk-caption-xl">Roof (section 6 of 11)</span>
+      <div class="govuk-!-padding-bottom-5">
+        <span class="govuk-caption-m">
+          <strong>Acme House</strong>, Acme Road, London, SW32 8KL
+        </span>
+      </div>
 
-      <form class="form" action="/questions/walls/external-wall-type" method="post">
+      <span class="govuk-caption-xl">Roof <!--(section 6 of 11)--></span>
+
+      <form class="form" action="/questions/stairs/staircases-int-and-ext" method="post">
 
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
         {{ govukRadios({
