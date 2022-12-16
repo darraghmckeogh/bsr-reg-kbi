@@ -1,0 +1,32 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% block pageTitle %}
+  Unbranded page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+{{ govukHeader({
+  homepageUrl: "#"
+}) }}
+
+<div class="govuk-!-padding-bottom-5"></div>
+
+  <h1 class="govuk-heading-xl">
+    We have recieved your registration application for Acme House.
+  </h1>
+  <div class="govuk-panel__body">
+    Your reference number is <strong>HDJ2123F</strong>
+  </div>
+  <div class="govuk-panel__body">
+    Your payment reference number is <strong>HDJ2123F</strong>
+  </div>
+  <div class="govuk-!-padding-bottom-5"></div>
+  <p class="govuk-body-l">
+    Your building registration has not yet been confirmed. You will receive another email confirming if we have accepted your registration once our teams have had time to review it.
+  </p>
+
+  <p><a href="/task-list">Return to your application</a></p>
+
+{% endblock %}
