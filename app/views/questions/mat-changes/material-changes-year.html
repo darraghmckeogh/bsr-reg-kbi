@@ -26,12 +26,12 @@
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Year of the most recent material change as defined by building regulations (optional)",
+            text: "Year of the most recent material change (optional)",
             classes: "govuk-label--xl",
             isPageHeading: true
           },
           hint: {
-            text: "For example 1985"
+            text: "Material change is defined by building regulations. For example 1985"
           },
           classes: "govuk-input--width-4",
           id: "year-of-use-change",

@@ -21,14 +21,16 @@
 
       <span class="govuk-caption-xl">Changes since completion <!--(section 10 of 11)--></span>
 
+      <h1 class="govuk-heading-xl">Year completion certificate issued for change of use</h1>
+
       <form class="form" action="/questions/mat-changes/material-changes" method="post">
 
         {% from "govuk/components/input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "What year did this change of use occur?",
-            classes: "govuk-label--xl",
-            isPageHeading: true
+            text: "Completion certificate year",
+            classes: "govuk-label--m",
+            isPageHeading: false
           },
           hint: {
             text: "If a refit happended over an extended period of time then enter the year of completion."

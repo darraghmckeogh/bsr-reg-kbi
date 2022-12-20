@@ -28,26 +28,26 @@
           name: "secondary-uses",
           fieldset: {
             legend: {
-              text: "Since the original build, has this building undergone any material change as defined by building regulations?",
+              text: "Have there been any material changes since the building was originally built?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
           },
           hint: {
-            text: "Select all that apply for known refurbishments."
+            text: "Select all that apply."
           },
           items: [
             {
               value: "assembly-and-recreation",
-              text: "Asbestos removal"
+              text: "Asbestos removed from multiple floors"
             }, 
             {
               value: "office",
-              text: "Changes in nunmber of storeys"
+              text: "Change in nunmber of floors"
             },
             {
               value: "residential-dwelling",
-              text: "Changes in number of residential flats"
+              text: "Changes in number of residential units"
             },
             {
               value: "residential-institution",
@@ -59,7 +59,11 @@
             },
             {
               value: "shop-and-commercial",
-              text: "Complete building or floor rewiring"
+              text: "Complete rewiring of buildings or floors"
+            },
+            {
+              value: "storage-and-other-non-residential",
+              text: "Installation, replacement or removal of active and passive fire systems"
             },
             {
               value: "storage-and-other-non-residential",
@@ -67,7 +71,11 @@
             },
             {
               value: "storage-and-other-non-residential",
-              text: "Installation, replacement or removal of cold water systems in multiple residential units"
+              text: "Installation, replacement or removal of cold water systems in multiple or all residential units"
+            },
+            {
+              value: "storage-and-other-non-residential",
+              text: "Installation, replacement or removal of heating or hot water system in multiple or all residential units"
             },
             {
               value: "storage-and-other-non-residential",
@@ -75,11 +83,15 @@
             },
             {
               value: "storage-and-other-non-residential",
-              text: "Work connected to external wall system"
+              text: "Work connected to external walls"
             },
             {
               value: "storage-and-other-non-residential",
               text: "None of the above"
+            },
+            {
+              value: "storage-and-other-non-residential",
+              text: "Not known"
             }
           ]
         }) }}
